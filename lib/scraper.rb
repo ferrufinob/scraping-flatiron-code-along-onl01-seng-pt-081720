@@ -21,6 +21,7 @@ class Scraper
   Scraper.new.get_page
   
   def print_courses
+    self.get_page.css(".post")
     self.make_courses
     Course.all.each do |course|
       if course.title && course.title != ""
